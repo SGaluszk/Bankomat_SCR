@@ -1,0 +1,103 @@
+package bankomat
+public
+	
+	system BankomatSystem
+	end BankomatSystem;
+	
+	system implementation BankomatSystem.with_devices
+		subcomponents
+			the_controller: process Controller.with_threads;
+			the_keyboard: device Keyboard;
+			the_display: device Display;
+			the_dispenser: device Dispenser;
+			the_card_reader: device Card_Reader;
+			the_speaker: device Speaker;
+			the_printer: device Printer;
+			the_camera: device Camera;
+			
+		connections
+			keyboard_cnt: port the_keyboard.pressed_keys -> the_controller.pressed_keys;
+			display_cnt: port the_controller.screen_out -> the_display.screen;
+            dispenser_cnt: port the_controller.dispenser_out -> the_dispenser.withdraw;
+			card_in_cnt: port the_card_reader.card_inserted -> the_controller.card_inserted;
+			card_out_cnt: port the_controller.card_return -> the_card_reader.card_return;
+            speaker_cnt: port the_controller.speaker_out -> the_speaker.speak;
+            printer_cnt: port the_controller.print_out -> the_printer.print;
+            camera_cnt: port the_camera.video_stream_out -> the_controller.video_stream_in;
+	end BankomatSystem.with_devices;
+	
+	process Controller
+		features
+			pressed_keys: in event port;
+			screen_out: out data port;
+			dispenser_out: out event port;
+			card_inserted: in event port;
+			card_return: out event port;
+			speaker_out: out event port;
+			print_out: out event port;
+			video_stream_in: in data port;
+			
+	end Controller;
+	
+	process implementation Controller.with_threads
+	end Controller.with_threads;
+	
+	device Keyboard
+		features
+			pressed_keys: out event port;
+	end Keyboard;
+	
+	device implementation Keyboard.impl
+	end Keyboard.impl;
+	
+	device Display
+		features
+			screen: in data port;
+	end Display;
+	
+	device implementation Display.impl
+	end Display.impl;
+	
+	device Dispenser
+		features
+			withdraw: in event port;
+	end Dispenser;
+	
+	device implementation Dispenser.impl
+	end Dispenser.impl;
+	
+	device Card_Reader
+		features
+			card_inserted: out event port;
+			card_return: in event port;
+	end Card_Reader;
+	
+	device implementation Card_Reader.impl
+	end Card_Reader.impl;
+	
+	device Speaker
+		features
+			speak: in event port;
+	end Speaker;
+	
+	device implementation Speaker.impl
+	end Speaker.impl;
+	
+	device Printer
+		features
+			print: in event port;
+	end Printer;
+	
+	device implementation Printer.impl
+	end Printer.impl;
+	
+	device Camera
+		features
+			video_stream_out: out data port;
+	end Camera;
+	
+	device implementation Camera.impl
+	end Camera.impl;
+	
+	
+end bankomat;

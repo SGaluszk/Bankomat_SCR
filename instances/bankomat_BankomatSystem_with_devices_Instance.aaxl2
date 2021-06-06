@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="BankomatSystem_with_devices_Instance" category="system">
+  <componentInstance name="the_keyboard" category="device">
+    <featureInstance name="pressed_keys" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Keyboard"/>
+  </componentInstance>
+  <componentInstance name="the_display" category="device">
+    <featureInstance name="screen">
+      <feature xsi:type="aadl2:DataPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Display"/>
+  </componentInstance>
+  <componentInstance name="the_dispenser" category="device">
+    <featureInstance name="withdraw" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Dispenser"/>
+  </componentInstance>
+  <componentInstance name="the_card_reader" category="device">
+    <featureInstance name="card_inserted" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="card_return" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Card_Reader"/>
+  </componentInstance>
+  <componentInstance name="the_speaker" category="device">
+    <featureInstance name="speak" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Speaker"/>
+  </componentInstance>
+  <componentInstance name="the_printer" category="device">
+    <featureInstance name="print" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Printer"/>
+  </componentInstance>
+  <componentInstance name="the_camera" category="device">
+    <featureInstance name="video_stream_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../bankomat.aadl#bankomat.Camera"/>
+  </componentInstance>
+  <componentInstance name="the_controller" category="process">
+    <featureInstance name="screen_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="video_stream_in">
+      <feature xsi:type="aadl2:DataPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="pressed_keys" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="dispenser_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="card_inserted" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="card_return" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="speaker_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="print_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../bankomat.aadl#bankomat.Controller.with_threads"/>
+  </componentInstance>
+  <connectionInstance name="the_keyboard.pressed_keys -> the_controller.pressed_keys" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_card_reader.card_inserted -> the_controller.card_inserted" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.4" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_camera.video_stream_out -> the_controller.video_stream_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_controller.screen_out -> the_display.screen" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_controller.dispenser_out -> the_dispenser.withdraw" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.7/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_controller.card_return -> the_card_reader.card_return" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.7/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.5" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_controller.speaker_out -> the_speaker.speak" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.7/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.6" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_controller.print_out -> the_printer.print" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.7/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.7" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../bankomat.aadl#bankomat.BankomatSystem.with_devices"/>
+</instance:SystemInstance>

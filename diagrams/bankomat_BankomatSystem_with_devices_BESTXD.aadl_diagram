@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="6c3e8ddb-d1f3-46f6-9a39-6ac397eeab14" manual="true">
+    <element uuid="113fc008-5fc7-488c-8620-1e1c699e72c1" manual="true">
+      <element uuid="dadc9472-9b12-4b21-b724-e08d043d95d3" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>camera_cnt</seg>
+      </bo>
+      <bendpoints>
+        <point x="417.0" y="202.0"/>
+        <point x="417.0" y="232.0"/>
+      </bendpoints>
+      <primaryLabelPosition x="-9.0" y="-22.0"/>
+    </element>
+    <element uuid="20fd2b08-639f-4452-ae67-2ff067c6e724" manual="true">
+      <element uuid="54838b11-1869-476c-9d82-db66da3bd135" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>card_in_cnt</seg>
+      </bo>
+    </element>
+    <element uuid="3a98ab01-5500-48c2-9e16-9b268ba34bcd" manual="true">
+      <element uuid="a5863c8d-2a3b-4aa0-8cc1-882cc2237ec3" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>card_out_cnt</seg>
+      </bo>
+      <primaryLabelPosition x="-43.0" y="-28.0"/>
+    </element>
+    <element uuid="126d9d77-28e7-4cfc-ab77-a16f724982a3" manual="true">
+      <element uuid="446d4784-d83e-4eab-b4bb-e9626dc09fd7" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dispenser_cnt</seg>
+      </bo>
+      <bendpoints>
+        <point x="823.0" y="282.0"/>
+        <point x="823.0" y="252.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="0db4f977-3ff1-42b7-a18c-29dc46a5f76b" manual="true">
+      <element uuid="c67431e9-33ac-459a-bb49-b3b5411eb3d2" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>display_cnt</seg>
+      </bo>
+      <bendpoints>
+        <point x="833.0" y="232.0"/>
+        <point x="890.0" y="232.0"/>
+      </bendpoints>
+      <primaryLabelPosition x="-70.0" y="-43.0"/>
+    </element>
+    <element uuid="2298ff56-dcd3-4a62-92fa-0b7d5ccffa5c" manual="true">
+      <element uuid="dd415461-5d0a-4132-b1f3-83aa37251cab" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>keyboard_cnt</seg>
+      </bo>
+      <bendpoints>
+        <point x="417.0" y="122.0"/>
+        <point x="417.0" y="182.0"/>
+      </bendpoints>
+      <primaryLabelPosition x="-11.0" y="-63.0"/>
+    </element>
+    <element uuid="7ce9469b-01c8-4d19-be6f-37e08e89d9e4" manual="true">
+      <element uuid="9ec406b8-9a86-4030-9a8d-0b658ea92ed8" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>printer_cnt</seg>
+      </bo>
+      <bendpoints>
+        <point x="823.0" y="182.0"/>
+        <point x="823.0" y="92.0"/>
+      </bendpoints>
+      <primaryLabelPosition x="-11.0" y="-24.0"/>
+    </element>
+    <element uuid="107a1d86-932b-483f-90e5-9543aeaaa35a" manual="true">
+      <element uuid="eefbb2ab-0db0-4173-9d76-e4bc6a2b20d5" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>speaker_cnt</seg>
+      </bo>
+      <primaryLabelPosition x="-47.0" y="-20.0"/>
+    </element>
+    <element uuid="baba1270-9790-43aa-8aab-efd45f1c765f" manual="true">
+      <bo>
+        <seg>realization</seg>
+      </bo>
+    </element>
+    <element uuid="837a18e0-1309-4629-a568-31164ae07433" manual="true">
+      <element uuid="08aed892-d33d-49e0-8753-4c7d9f3c8e9a" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>video_stream_out</seg>
+        </bo>
+        <position x="255.0" y="10.0"/>
+      </element>
+      <element uuid="cfb6dba9-43a1-4ce6-b827-5139389879b6" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_camera</seg>
+      </bo>
+      <position x="12.0" y="148.0"/>
+      <size width="383.0" height="60.0"/>
+    </element>
+    <element uuid="93ec5bc7-6577-4665-9420-531c9e5299bc" manual="true">
+      <element uuid="aa39623a-f40f-4d64-a557-a4dcb4d3a76a" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>card_inserted</seg>
+        </bo>
+        <position x="259.0" y="60.0"/>
+      </element>
+      <element uuid="a847969e-e88b-4439-8319-a6b449b49c73" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>card_return</seg>
+        </bo>
+        <position x="274.0" y="10.0"/>
+      </element>
+      <element uuid="4cc0cf52-a7a1-4628-833e-a8216aa23211" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_card_reader</seg>
+      </bo>
+      <position x="12.0" y="228.0"/>
+      <size width="359.0" height="110.0"/>
+    </element>
+    <element uuid="031446fd-08b4-4476-a5cc-d260628546a6" manual="true">
+      <element uuid="d4ac44bd-2e64-4051-bc0b-cfa73cac08e2" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>card_inserted</seg>
+        </bo>
+        <position y="160.0"/>
+      </element>
+      <element uuid="fa4d3f7a-64c3-405b-8c0c-b11372d2ad7e" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>card_return</seg>
+        </bo>
+        <position y="110.0"/>
+      </element>
+      <element uuid="906a1109-9680-4ed6-9fc4-5ad4349c31d0" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>dispenser_out</seg>
+        </bo>
+        <position x="209.0" y="110.0"/>
+      </element>
+      <element uuid="3388293f-67a6-44ad-b16e-cdeb0ad51d32" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>pressed_keys</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="237c383c-06b2-486c-aefb-65fade99efbc" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>print_out</seg>
+        </bo>
+        <position x="245.0" y="10.0"/>
+      </element>
+      <element uuid="bbe0528a-7438-41bf-8d06-a4a4aef8284f" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>screen_out</seg>
+        </bo>
+        <position x="232.0" y="60.0"/>
+      </element>
+      <element uuid="c89b1a11-5584-461c-8965-60dc5be58578" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>speaker_out</seg>
+        </bo>
+        <position x="224.0" y="160.0"/>
+      </element>
+      <element uuid="33fa4007-efe5-4542-a07f-e3c5cfbafc90" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>video_stream_in</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="c226824c-3f16-446e-851c-c70af859c48b" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_controller</seg>
+      </bo>
+      <position x="488.0" y="128.0"/>
+      <size width="313.0" height="210.0"/>
+    </element>
+    <element uuid="e154cfc0-af7c-4156-8eb4-238e71b93a19" manual="true">
+      <element uuid="019ea3b5-e0b2-4cea-be48-997d02067c81" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>withdraw</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="60c2ed2a-eb33-4c7e-bd95-8149d409f1af" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_dispenser</seg>
+      </bo>
+      <position x="892.0" y="198.0"/>
+      <size width="219.0" height="60.0"/>
+    </element>
+    <element uuid="9e860709-918f-4ab6-90c7-1ee1de11d84e" manual="true">
+      <element uuid="8365459a-cbfa-4986-a1df-d248a660469a" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>screen</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="19281b7f-33c0-44dd-bcbd-5045b9bcaefe" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_display</seg>
+      </bo>
+      <position x="878.0" y="118.0"/>
+      <size width="228.0" height="60.0"/>
+    </element>
+    <element uuid="84a415b7-5331-4d8c-b305-7a1fdf406346" manual="true">
+      <element uuid="55c1bea2-9f4b-497a-a308-6cba6965693d" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>pressed_keys</seg>
+        </bo>
+        <position x="240.0" y="10.0"/>
+      </element>
+      <element uuid="5b383130-4e88-49e6-82ed-a5a00b0321aa" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_keyboard</seg>
+      </bo>
+      <position x="12.0" y="38.0"/>
+      <size width="339.0" height="60.0"/>
+    </element>
+    <element uuid="d80e529b-93d9-4516-84ed-c0320e1b96b0" manual="true">
+      <element uuid="99c71e3a-24d8-438a-a845-349ea1500557" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>print</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="1b0306d2-ba0b-45f3-9f09-cadc1d94d8e8" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_printer</seg>
+      </bo>
+      <position x="903.0" y="38.0"/>
+      <size width="198.0" height="60.0"/>
+    </element>
+    <element uuid="7e915fe4-89b8-46f3-8450-336cec786ad0" manual="true">
+      <element uuid="47235094-a86f-4bc9-b20d-38a294f802d1" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>speak</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="23175fad-2b03-4c35-97ca-c711ae11d234" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>the_speaker</seg>
+      </bo>
+      <position x="892.0" y="278.0"/>
+      <size width="219.0" height="60.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>BankomatSystem.with_devices</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="1123.0" height="379.0"/>
+  </element>
+  <config type="structure">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>bankomat::BankomatSystem.with_devices</seg>
+    </context>
+  </config>
+</diagram:Diagram>
