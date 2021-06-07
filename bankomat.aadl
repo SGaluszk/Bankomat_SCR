@@ -14,6 +14,8 @@ public
 			the_speaker: device Speaker;
 			the_printer: device Printer;
 			the_camera: device Camera;
+			the_bus: bus HWConnection.impl;
+			the_processor: processor MainProcessor.impl;
 			
 		connections
 			keyboard_cnt: port the_keyboard.pressed_keys -> the_controller.pressed_keys;
@@ -24,27 +26,116 @@ public
             speaker_cnt: port the_controller.speaker_out -> the_speaker.speak;
             printer_cnt: port the_controller.print_out -> the_printer.print;
             camera_cnt: port the_camera.video_stream_out -> the_controller.video_stream_in;
+            
+            bus_keyboard_cnt: bus access the_bus -> the_keyboard.bus_access;
+			bus_display_cnt: bus access the_bus -> the_display.bus_access;
+            bus_dispenser_cnt: bus access the_bus -> the_dispenser.bus_access;
+			bus_card_in_cnt: bus access the_bus -> the_card_reader.bus_access;
+            bus_speaker_cnt: bus access the_bus -> the_speaker.bus_access;
+            bus_printer_cnt: bus access the_bus -> the_printer.bus_access;
+            bus_camera_cnt: bus access the_bus -> the_camera.bus_access;
+            bus_processor: bus access the_bus -> the_processor.bus_access;
+            
+            	
 	end BankomatSystem.with_devices;
 	
 	process Controller
 		features
-			pressed_keys: in event port;
+			pressed_keys: in data port;
 			screen_out: out data port;
-			dispenser_out: out event port;
-			card_inserted: in event port;
+			dispenser_out: out data port;
+			card_inserted: in data port;
 			card_return: out event port;
-			speaker_out: out event port;
-			print_out: out event port;
+			speaker_out: out data port;
+			print_out: out data port;
 			video_stream_in: in data port;
 			
 	end Controller;
 	
 	process implementation Controller.with_threads
+		subcomponents
+			the_thread_keyboard: thread KeyboardThread.impl;
+			the_thread_display: thread DisplayThread.impl;
+			the_thread_dispenser: thread DispenserThread.impl;
+			the_thread_card_reader: thread CardReaderThread.impl;
+			the_thread_speaker: thread SpeakerThread.impl;
+			the_thread_printer: thread PrinterThread.impl;
+			the_thread_camera: thread CameraThread.impl;
+			
+		connections
+			keyboard_thread_cnt: port pressed_keys -> the_thread_keyboard.pressed_keys;
+			display_thread_cnt: port the_thread_display.screen_out -> screen_out;
+            dispenser_thread_cnt: port the_thread_dispenser.dispenser_out -> dispenser_out;
+			card_in_thread_cnt: port card_inserted -> the_thread_card_reader.card_inserted;
+			card_out_thread_cnt: port the_thread_card_reader.card_return -> card_return;
+            speaker_thread_cnt: port the_thread_speaker.speaker_out -> speaker_out;
+            printer_thread_cnt: port the_thread_printer.print_out -> print_out;
+            camera_thread_cnt: port video_stream_in -> the_thread_camera.video_stream_in;
+            
 	end Controller.with_threads;
+	
+	thread KeyboardThread
+		features
+			pressed_keys: in data port;
+			
+	end KeyboardThread;
+	
+	thread implementation KeyboardThread.impl
+	end KeyboardThread.impl;
+	
+	thread DisplayThread
+		features
+			screen_out: out data port;
+	end DisplayThread;
+	
+	thread implementation DisplayThread.impl
+	end DisplayThread.impl;
+	
+	thread DispenserThread
+		features
+			dispenser_out: out data port;
+	end DispenserThread;
+	
+	thread implementation DispenserThread.impl
+	end DispenserThread.impl;
+	
+	thread CardReaderThread
+		features
+			card_inserted: in data port;
+			card_return: out event port;
+	end CardReaderThread;
+	
+	thread implementation CardReaderThread.impl
+	end CardReaderThread.impl;
+
+	thread SpeakerThread
+		features
+			speaker_out: out data port;
+	end SpeakerThread;
+	
+	thread implementation SpeakerThread.impl
+	end SpeakerThread.impl;
+	
+	thread PrinterThread
+		features
+			print_out: out data port;
+	end PrinterThread;
+	
+	thread implementation PrinterThread.impl
+	end PrinterThread.impl;
+	
+	thread CameraThread
+		features
+			video_stream_in: in data port;
+	end CameraThread;
+	
+	thread implementation CameraThread.impl
+	end CameraThread.impl;
 	
 	device Keyboard
 		features
-			pressed_keys: out event port;
+			pressed_keys: out data port;
+			bus_access: requires bus access HWConnection;
 	end Keyboard;
 	
 	device implementation Keyboard.impl
@@ -53,6 +144,7 @@ public
 	device Display
 		features
 			screen: in data port;
+			bus_access: requires bus access HWConnection;
 	end Display;
 	
 	device implementation Display.impl
@@ -60,7 +152,8 @@ public
 	
 	device Dispenser
 		features
-			withdraw: in event port;
+			withdraw: in data port;
+			bus_access: requires bus access HWConnection;
 	end Dispenser;
 	
 	device implementation Dispenser.impl
@@ -68,8 +161,9 @@ public
 	
 	device Card_Reader
 		features
-			card_inserted: out event port;
+			card_inserted: out data port;
 			card_return: in event port;
+			bus_access: requires bus access HWConnection;
 	end Card_Reader;
 	
 	device implementation Card_Reader.impl
@@ -77,7 +171,8 @@ public
 	
 	device Speaker
 		features
-			speak: in event port;
+			speak: in data port;
+			bus_access: requires bus access HWConnection;
 	end Speaker;
 	
 	device implementation Speaker.impl
@@ -85,7 +180,8 @@ public
 	
 	device Printer
 		features
-			print: in event port;
+			print: in data port;
+			bus_access: requires bus access HWConnection;
 	end Printer;
 	
 	device implementation Printer.impl
@@ -94,10 +190,32 @@ public
 	device Camera
 		features
 			video_stream_out: out data port;
+			bus_access: requires bus access HWConnection;
 	end Camera;
 	
 	device implementation Camera.impl
 	end Camera.impl;
+	
+	memory Ram
+	end Ram;
+	
+	bus HWConnection
+	end HWConnection;
+	
+	bus implementation HWConnection.impl
+	end HWConnection.impl;
+	
+	processor MainProcessor
+		features
+			bus_access: requires bus access HWConnection;
+	end MainProcessor;
+	
+	processor implementation MainProcessor.impl
+		subcomponents
+			the_ram: memory Ram;
+	end MainProcessor.impl;
+	
+
 	
 	
 end bankomat;
