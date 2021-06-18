@@ -1,10 +1,14 @@
 package bankomat
 public
+	with Deployment;
+	with Base_Types;
+	
 	
 	system BankomatSystem
 	end BankomatSystem;
-	
+
 	system implementation BankomatSystem.with_devices
+		
 		subcomponents
 			the_controller: process Controller.with_threads;
 			the_keyboard: device Keyboard;
@@ -15,207 +19,369 @@ public
 			the_printer: device Printer;
 			the_camera: device Camera;
 			the_bus: bus HWConnection.impl;
-			the_processor: processor MainProcessor.impl;
-			
+			the_processor: processor MainProcessor.impl;	
+
 		connections
-			keyboard_cnt: port the_keyboard.pressed_keys -> the_controller.pressed_keys;
 			display_cnt: port the_controller.screen_out -> the_display.screen;
-            dispenser_cnt: port the_controller.dispenser_out -> the_dispenser.withdraw;
+			dispenser_cnt: port the_controller.dispenser_out -> the_dispenser.withdraw;
 			card_in_cnt: port the_card_reader.card_inserted -> the_controller.card_inserted;
 			card_out_cnt: port the_controller.card_return -> the_card_reader.card_return;
-            speaker_cnt: port the_controller.speaker_out -> the_speaker.speak;
-            printer_cnt: port the_controller.print_out -> the_printer.print;
-            camera_cnt: port the_camera.video_stream_out -> the_controller.video_stream_in;
-            
-            bus_keyboard_cnt: bus access the_bus -> the_keyboard.bus_access;
+			speaker_cnt: port the_controller.speaker_out -> the_speaker.speak;
+			printer_cnt: port the_controller.print_out -> the_printer.print;
+			camera_cnt: port the_camera.video_stream_out -> the_controller.video_stream_in;
+			keyboard_cnt: port the_keyboard.pressed_keys -> the_controller.pressed_keys;
+
+			bus_keyboard_cnt: bus access the_bus -> the_keyboard.bus_access;
 			bus_display_cnt: bus access the_bus -> the_display.bus_access;
-            bus_dispenser_cnt: bus access the_bus -> the_dispenser.bus_access;
+			bus_dispenser_cnt: bus access the_bus -> the_dispenser.bus_access;
 			bus_card_in_cnt: bus access the_bus -> the_card_reader.bus_access;
-            bus_speaker_cnt: bus access the_bus -> the_speaker.bus_access;
-            bus_printer_cnt: bus access the_bus -> the_printer.bus_access;
-            bus_camera_cnt: bus access the_bus -> the_camera.bus_access;
-            bus_processor: bus access the_bus -> the_processor.bus_access;
-            
-            	
+			bus_speaker_cnt: bus access the_bus -> the_speaker.bus_access;
+			bus_printer_cnt: bus access the_bus -> the_printer.bus_access;
+			bus_camera_cnt: bus access the_bus -> the_camera.bus_access;
+			bus_processor: bus access the_bus -> the_processor.bus_access;
+
+		properties
+			actual_processor_binding => (reference (the_processor)) applies to the_controller;
+			
 	end BankomatSystem.with_devices;
-	
+
+
 	process Controller
 		features
-			pressed_keys: in data port;
-			screen_out: out data port;
-			dispenser_out: out data port;
-			card_inserted: in data port;
+			pressed_keys: in data port Base_Types::Integer;
+			screen_out: out data port Base_Types::Integer;
+			dispenser_out: out data port Base_Types::Integer;
+			card_inserted: in data port Base_Types::Integer;
+			speaker_out: out data port Base_Types::Integer;
+			print_out: out data port Base_Types::Integer;
+			video_stream_in: in data port Base_Types::Integer;
 			card_return: out event port;
-			speaker_out: out data port;
-			print_out: out data port;
-			video_stream_in: in data port;
-			
 	end Controller;
-	
+
 	process implementation Controller.with_threads
 		subcomponents
 			the_thread_keyboard: thread KeyboardThread.impl;
 			the_thread_display: thread DisplayThread.impl;
 			the_thread_dispenser: thread DispenserThread.impl;
 			the_thread_card_reader: thread CardReaderThread.impl;
+			the_thread_card_return: thread CardReturnThread.impl;
 			the_thread_speaker: thread SpeakerThread.impl;
 			the_thread_printer: thread PrinterThread.impl;
 			the_thread_camera: thread CameraThread.impl;
-			
+
 		connections
 			keyboard_thread_cnt: port pressed_keys -> the_thread_keyboard.pressed_keys;
 			display_thread_cnt: port the_thread_display.screen_out -> screen_out;
-            dispenser_thread_cnt: port the_thread_dispenser.dispenser_out -> dispenser_out;
+			dispenser_thread_cnt: port the_thread_dispenser.dispenser_out -> dispenser_out;
 			card_in_thread_cnt: port card_inserted -> the_thread_card_reader.card_inserted;
-			card_out_thread_cnt: port the_thread_card_reader.card_return -> card_return;
-            speaker_thread_cnt: port the_thread_speaker.speaker_out -> speaker_out;
-            printer_thread_cnt: port the_thread_printer.print_out -> print_out;
-            camera_thread_cnt: port video_stream_in -> the_thread_camera.video_stream_in;
-            
+			card_out_thread_cnt: port the_thread_card_return.card_return -> card_return;
+			speaker_thread_cnt: port the_thread_speaker.speaker_out -> speaker_out;
+			printer_thread_cnt: port the_thread_printer.print_out -> print_out;
+			camera_thread_cnt: port video_stream_in -> the_thread_camera.video_stream_in;
+
 	end Controller.with_threads;
-	
+
 	thread KeyboardThread
 		features
-			pressed_keys: in data port;
-			
+			pressed_keys: in data port Base_Types::Integer;
+
 	end KeyboardThread;
-	
+
 	thread implementation KeyboardThread.impl
+		calls
+			Main: {
+				read_keyboard: subprogram ReadKeyboard;
+			};
+			
+		connections
+			C1: parameter pressed_keys -> read_keyboard.key_input;
 	end KeyboardThread.impl;
 	
+		subprogram ReadKeyboard
+		features
+			key_input: in parameter Base_Types::Integer;
+	end ReadKeyboard;
+
+	subprogram implementation ReadKeyboard.impl
+		properties
+			Source_Language => (C);
+			Source_Name => "read_keyboard";
+			source_text => ("bankomat.c");
+	end ReadKeyboard.impl;	
+
 	thread DisplayThread
 		features
-			screen_out: out data port;
+			screen_out: out data port Base_Types::Integer;
 	end DisplayThread;
-	
+
 	thread implementation DisplayThread.impl
+		calls
+			Main: {
+				send_display: subprogram SendDisplay;
+			};
+		connections
+			C1: parameter send_display.obraz_out -> screen_out;
 	end DisplayThread.impl;
 	
+	subprogram SendDisplay		
+		features
+			obraz_out : out parameter Base_Types::Integer;
+	end SendDisplay;
+	
+	subprogram implementation SendDisplay.impl
+		properties
+			Source_Language => (C);
+			Source_Name => "send_display";
+			source_text => ("bankomat.c");
+	end SendDisplay.impl;
+	
+
 	thread DispenserThread
 		features
-			dispenser_out: out data port;
+			dispenser_out: out data port Base_Types::Integer;
 	end DispenserThread;
-	
+
 	thread implementation DispenserThread.impl
+		calls
+			Main: {
+				dispenser_withdraw: subprogram DispenserWithdraw;
+			};
+		connections
+			C1: parameter dispenser_withdraw.withdraw_info -> dispenser_out;
 	end DispenserThread.impl;
 	
+	subprogram DispenserWithdraw
+		features
+			withdraw_info: out parameter Base_Types::Integer;
+			
+	end DispenserWithdraw;
+
+	subprogram implementation DispenserWithdraw.impl
+		properties
+			Source_Language => (C);
+			Source_Name => "dispenser_withdraw";
+			source_text => ("bankomat.c");
+	end DispenserWithdraw.impl;
+
 	thread CardReaderThread
 		features
-			card_inserted: in data port;
-			card_return: out event port;
+			card_inserted: in data port Base_Types::Integer;
 	end CardReaderThread;
-	
+
 	thread implementation CardReaderThread.impl
+		calls
+			Main: {
+				read_card: subprogram ReadCard;
+			};
+		connections
+			C1: parameter card_inserted -> read_card.read_card;
 	end CardReaderThread.impl;
+	
+	subprogram ReadCard
+		features
+			read_card: in parameter Base_Types::Integer;		
+	end ReadCard;
+	
+	subprogram implementation ReadCard.impl
+		properties
+			Source_Language        => (C);
+			Source_Name            => "read_card";
+			source_text  		   => ("bankomat.c");			
+	end ReadCard.impl;	
+	
+	thread CardReturnThread
+		features
+			card_return: out event port;
+	end CardReturnThread;
+
+	thread implementation CardReturnThread.impl
+		calls
+			Main2: {
+				return_card: subprogram ReturnCard;
+			};
+			
+		--connections
+			--C2: port return_card.return_card -> card_return;
+	end CardReturnThread.impl;
+	
+	subprogram ReturnCard
+		--features
+		--	return_card: out event port;
+	end ReturnCard;
+	
+	subprogram implementation ReturnCard.impl
+		properties
+			Source_Language        => (C);
+			Source_Name            => "return_card";
+			source_text  		   => ("bankomat.c");			
+	end ReturnCard.impl;	
 
 	thread SpeakerThread
 		features
-			speaker_out: out data port;
+			speaker_out: out data port Base_Types::Integer;
 	end SpeakerThread;
-	
+
 	thread implementation SpeakerThread.impl
+		calls
+			Main: {
+				speaker_send_message: subprogram SpeakerSendMessage;
+			};
+		connections
+			C1: parameter speaker_send_message.speaker_speak -> speaker_out;
 	end SpeakerThread.impl;
 	
+	subprogram SpeakerSendMessage
+		features
+			speaker_speak: out parameter Base_Types::Integer;		
+			
+	end SpeakerSendMessage;
+	
+	subprogram implementation SpeakerSendMessage.impl
+		properties
+			Source_Language        => (C);
+			Source_Name            => "speaker_send_message";
+			source_text  		   => ("bankomat.c");			
+	end SpeakerSendMessage.impl;	
+
 	thread PrinterThread
 		features
-			print_out: out data port;
+			print_out: out data port Base_Types::Integer;
 	end PrinterThread;
-	
+
 	thread implementation PrinterThread.impl
+		calls
+			Main: {
+				print_info: subprogram PrintInfo;
+			};
+		connections
+			C1: parameter print_info.text_out -> print_out;
 	end PrinterThread.impl;
+
+	subprogram PrintInfo
+		features
+			text_out: out parameter Base_Types::Integer;
+	end PrintInfo;
+	subprogram implementation PrintInfo.impl
+		properties
+			Source_Language        => (C);
+			Source_Name            => "print_info";
+			source_text  		   => ("bankomat.c"); 
+	end PrintInfo.impl;
 	
 	thread CameraThread
 		features
-			video_stream_in: in data port;
+			video_stream_in: in data port Base_Types::Integer;
 	end CameraThread;
-	
+
 	thread implementation CameraThread.impl
+		calls
+			Main: {
+				record_camera: subprogram RecordCamera;
+			};
+		connections
+			C1: parameter video_stream_in -> record_camera.recorded_video;
 	end CameraThread.impl;
+
+	subprogram RecordCamera
+		features
+			recorded_video: in parameter Base_Types::Integer;
+	end RecordCamera;
+	subprogram implementation RecordCamera.impl
+		properties
+			Source_Language        => (C);
+			Source_Name            => "record_camera";
+			source_text  		   => ("bankomat.c"); 
+	end RecordCamera.impl;
+	
 	
 	device Keyboard
 		features
-			pressed_keys: out data port;
+			pressed_keys: out data port Base_Types::Integer;
 			bus_access: requires bus access HWConnection;
 	end Keyboard;
-	
+
 	device implementation Keyboard.impl
 	end Keyboard.impl;
-	
+
 	device Display
 		features
-			screen: in data port;
+			screen: in data port Base_Types::Integer;
 			bus_access: requires bus access HWConnection;
 	end Display;
-	
+
 	device implementation Display.impl
 	end Display.impl;
-	
+
 	device Dispenser
 		features
-			withdraw: in data port;
+			withdraw: in data port Base_Types::Integer;
 			bus_access: requires bus access HWConnection;
 	end Dispenser;
-	
+
 	device implementation Dispenser.impl
 	end Dispenser.impl;
-	
+
 	device Card_Reader
 		features
-			card_inserted: out data port;
+			card_inserted: out data port Base_Types::Integer;
 			card_return: in event port;
 			bus_access: requires bus access HWConnection;
 	end Card_Reader;
-	
+
 	device implementation Card_Reader.impl
 	end Card_Reader.impl;
-	
+
 	device Speaker
 		features
-			speak: in data port;
+			speak: in data port Base_Types::Integer;
 			bus_access: requires bus access HWConnection;
 	end Speaker;
-	
+
 	device implementation Speaker.impl
 	end Speaker.impl;
-	
+
 	device Printer
 		features
-			print: in data port;
+			print: in data port Base_Types::Integer;
 			bus_access: requires bus access HWConnection;
 	end Printer;
-	
+
 	device implementation Printer.impl
 	end Printer.impl;
-	
+
 	device Camera
 		features
-			video_stream_out: out data port;
+			video_stream_out: out data port Base_Types::Integer;
 			bus_access: requires bus access HWConnection;
 	end Camera;
-	
+
 	device implementation Camera.impl
 	end Camera.impl;
-	
+
 	memory Ram
 	end Ram;
-	
+
 	bus HWConnection
 	end HWConnection;
-	
+
 	bus implementation HWConnection.impl
 	end HWConnection.impl;
-	
+
 	processor MainProcessor
 		features
 			bus_access: requires bus access HWConnection;
+		properties
+			Deployment::Execution_Platform => Native;
+			Scheduling_Protocol => (Posix_1003_Highest_Priority_First_Protocol);
+			Priority_Range => 1 .. 10;
 	end MainProcessor;
-	
+
 	processor implementation MainProcessor.impl
 		subcomponents
 			the_ram: memory Ram;
 	end MainProcessor.impl;
-	
 
-	
+
+
 	
 end bankomat;

@@ -13,8 +13,8 @@
         <seg>bus_camera_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="60.0" y="952.0"/>
-        <point x="58.0" y="272.0"/>
+        <point x="-162.0" y="700.0"/>
+        <point x="-164.0" y="20.0"/>
       </bendpoints>
     </element>
     <element uuid="42b76653-74d3-4e45-841f-fdb9c8c3c801" manual="true">
@@ -29,8 +29,8 @@
         <seg>bus_card_in_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="62.0" y="946.0"/>
-        <point x="62.0" y="522.0"/>
+        <point x="-160.0" y="694.0"/>
+        <point x="-160.0" y="270.0"/>
       </bendpoints>
     </element>
     <element uuid="f1696daa-2526-4add-906d-2abaa3bfdf24" manual="true">
@@ -45,8 +45,8 @@
         <seg>bus_dispenser_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1518.0" y="950.0"/>
-        <point x="1518.0" y="480.0"/>
+        <point x="1296.0" y="698.0"/>
+        <point x="1296.0" y="228.0"/>
       </bendpoints>
     </element>
     <element uuid="234066e4-2d8a-4e4a-af63-f03838cfa5b9" manual="true">
@@ -61,8 +61,8 @@
         <seg>bus_display_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1522.0" y="950.0"/>
-        <point x="1522.0" y="270.0"/>
+        <point x="1300.0" y="698.0"/>
+        <point x="1300.0" y="18.0"/>
       </bendpoints>
     </element>
     <element uuid="dd3b8cda-e553-48e9-bfc6-21f4ca57728a" manual="true">
@@ -77,8 +77,8 @@
         <seg>bus_keyboard_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="60.0" y="950.0"/>
-        <point x="60.0" y="112.0"/>
+        <point x="-162.0" y="698.0"/>
+        <point x="-162.0" y="-140.0"/>
       </bendpoints>
     </element>
     <element uuid="339167b4-ebf8-43e6-b140-6c49d981f427" manual="true">
@@ -93,8 +93,8 @@
         <seg>bus_printer_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1530.0" y="950.0"/>
-        <point x="1530.0" y="112.0"/>
+        <point x="1308.0" y="698.0"/>
+        <point x="1308.0" y="-140.0"/>
       </bendpoints>
     </element>
     <element uuid="b1b8a931-480f-4f83-b051-654648b7a6d1" manual="true">
@@ -109,7 +109,7 @@
         <seg>bus_processor</seg>
       </bo>
       <bendpoints>
-        <point x="134.0" y="714.0"/>
+        <point x="-88.0" y="462.0"/>
       </bendpoints>
     </element>
     <element uuid="0156c11b-8fc3-4b52-bef3-7197162f6b61" manual="true">
@@ -124,8 +124,8 @@
         <seg>bus_speaker_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1514.0" y="950.0"/>
-        <point x="1514.0" y="680.0"/>
+        <point x="1292.0" y="698.0"/>
+        <point x="1292.0" y="428.0"/>
       </bendpoints>
     </element>
     <element uuid="c1113a46-4e43-4f1d-ad42-38ae4c619452" manual="true">
@@ -422,7 +422,7 @@
           <seg>feature</seg>
           <seg>dispenser_out</seg>
         </bo>
-        <position x="356.0" y="380.0"/>
+        <position x="1127.0" y="380.0"/>
       </element>
       <element uuid="3388293f-67a6-44ad-b16e-cdeb0ad51d32" manual="true" dockArea="left">
         <bo>
@@ -436,21 +436,21 @@
           <seg>feature</seg>
           <seg>print_out</seg>
         </bo>
-        <position x="392.0" y="10.0"/>
+        <position x="1163.0" y="10.0"/>
       </element>
       <element uuid="bbe0528a-7438-41bf-8d06-a4a4aef8284f" manual="true" dockArea="right">
         <bo>
           <seg>feature</seg>
           <seg>screen_out</seg>
         </bo>
-        <position x="379.0" y="130.0"/>
+        <position x="1150.0" y="130.0"/>
       </element>
       <element uuid="c89b1a11-5584-461c-8965-60dc5be58578" manual="true" dockArea="right">
         <bo>
           <seg>feature</seg>
           <seg>speaker_out</seg>
         </bo>
-        <position x="371.0" y="540.0"/>
+        <position x="1142.0" y="540.0"/>
       </element>
       <element uuid="33fa4007-efe5-4542-a07f-e3c5cfbafc90" manual="true" dockArea="left">
         <bo>
@@ -460,12 +460,47 @@
         <position y="260.0"/>
       </element>
       <element uuid="09a13511-29e5-4c30-a9ac-a03377144c71" manual="true">
+        <element uuid="24fdfd05-58e3-4188-a6ba-17f05e15defc" manual="true">
+          <element uuid="cb5e87eb-cfe5-43b1-8f2d-9305d8bd1e4f" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
         <element uuid="a9d5b814-ee6d-4b3a-a7b6-9ea1a441aea6" manual="true" dockArea="left">
           <bo>
             <seg>feature</seg>
             <seg>video_stream_in</seg>
           </bo>
           <position y="60.0"/>
+        </element>
+        <element uuid="41b4eaef-dabb-49c4-a2a8-94810667ae36" manual="true">
+          <element uuid="b80bba56-830e-4de6-980f-9c646addb2e1" manual="true">
+            <element uuid="24c9fc56-2697-46ed-9efc-80d2738e6d67" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>recorded_video</seg>
+              </bo>
+              <position y="10.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>record_camera</seg>
+            </bo>
+            <position x="12.0" y="46.0"/>
+            <size width="169.0" height="52.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="110.0" y="70.0"/>
+          <size width="251.0" height="98.0"/>
         </element>
         <element uuid="4bb4cb6d-674d-4fa9-bcda-f372508c979c" manual="true">
           <bo>
@@ -477,10 +512,34 @@
           <seg>subcomponent</seg>
           <seg>the_thread_camera</seg>
         </bo>
-        <position x="130.0" y="200.0"/>
-        <size width="249.0" height="100.0"/>
+        <position x="452.0" y="222.0"/>
+        <size width="401.0" height="188.0"/>
       </element>
       <element uuid="d8e11ba1-792e-42ee-8a59-bbecf93cf451" manual="true">
+        <element uuid="2c6c3675-139b-4da1-aad4-95ee65ade57a" manual="true">
+          <element uuid="21cce6ec-8b29-4126-9bb0-70f3c504e4fd" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
+        <element uuid="9fd8371f-63ef-410e-8157-0d6a87d30574" manual="true">
+          <element uuid="a0c47ce2-a004-4e46-a198-d1bdda42bd38" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C2</seg>
+          </bo>
+        </element>
         <element uuid="fb29fefb-034a-4b23-9292-7cdec1b70f10" manual="true" dockArea="left">
           <bo>
             <seg>feature</seg>
@@ -495,6 +554,44 @@
           </bo>
           <position y="44.0"/>
         </element>
+        <element uuid="ff8c7f37-3405-4777-a004-56b6ba14e471" manual="true">
+          <element uuid="1c8a3b4f-f7ce-4fd4-b259-0437ce72a570" manual="true">
+            <element uuid="2ec1fd9c-4727-4490-929b-d0a8829ca0ef" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>read_card</seg>
+              </bo>
+              <position y="10.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>read_card</seg>
+            </bo>
+            <position x="12.0" y="38.0"/>
+            <size width="122.0" height="60.0"/>
+          </element>
+          <element uuid="6a1bbb3f-03a3-4a56-9b0a-364ae324ce3e" manual="true">
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>return_card</seg>
+            </bo>
+            <position x="190.0" y="50.0"/>
+            <size width="101.0" height="35.0"/>
+          </element>
+          <element uuid="9c4e1eb8-626c-4626-835b-912ac06c9e2f" manual="true">
+            <bo>
+              <seg>subprogram_call_order</seg>
+              <seg>read_card</seg>
+              <seg>return_card</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="84.0" y="72.0"/>
+          <size width="311.0" height="98.0"/>
+        </element>
         <element uuid="8521f413-c7d2-4942-b3cc-a687f9ed16b0" manual="true">
           <bo>
             <seg>tag</seg>
@@ -506,15 +603,50 @@
           <seg>the_thread_card_reader</seg>
         </bo>
         <position x="89.0" y="390.0"/>
-        <size width="291.0" height="131.0"/>
+        <size width="437.0" height="203.0"/>
       </element>
       <element uuid="af1e4a66-ed50-4d4b-b765-5cebda622ace" manual="true">
+        <element uuid="f8c11b28-2fa8-499a-86a3-d31145f6a128" manual="true">
+          <element uuid="e4105739-39a1-413e-b4fb-10638b90c503" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
         <element uuid="4fcfa4d1-9b06-48fd-bd7a-5eaaa282c0cb" manual="true" dockArea="right">
           <bo>
             <seg>feature</seg>
             <seg>dispenser_out</seg>
           </bo>
-          <position x="192.0" y="5.0"/>
+          <position x="377.0" y="5.0"/>
+        </element>
+        <element uuid="8a8c3480-910d-4f6e-ba3e-512f797e24f3" manual="true">
+          <element uuid="145246f2-4dab-46af-986b-d29a0473f3de" manual="true">
+            <element uuid="d51a6cac-e166-49a2-81d8-4eb8731ce7e1" manual="true" dockArea="right">
+              <bo>
+                <seg>feature</seg>
+                <seg>withdraw_info</seg>
+              </bo>
+              <position x="44.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>dispenser_withdraw</seg>
+            </bo>
+            <position x="116.0" y="40.0"/>
+            <size width="147.0" height="60.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="160.0" y="50.0"/>
+          <size width="263.0" height="100.0"/>
         </element>
         <element uuid="c27b4a79-7ea8-46b5-985b-b3ea2365d96f" manual="true">
           <bo>
@@ -526,16 +658,51 @@
           <seg>subcomponent</seg>
           <seg>the_thread_dispenser</seg>
         </bo>
-        <position x="84.0" y="530.0"/>
-        <size width="296.0" height="60.0"/>
+        <position x="192.0" y="652.0"/>
+        <size width="481.0" height="162.0"/>
       </element>
       <element uuid="4620faaa-4159-4268-bc11-3f132bc17219" manual="true">
+        <element uuid="7a20187a-8a0e-43ea-8bb6-8e74e4f94e92" manual="true">
+          <element uuid="e730a409-da2b-4228-ba90-ca1373d18c5c" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
         <element uuid="a9cd2c24-ad7a-445b-961b-ba804c82c905" manual="true" dockArea="right">
           <bo>
             <seg>feature</seg>
             <seg>screen_out</seg>
           </bo>
-          <position x="215.0"/>
+          <position x="231.0"/>
+        </element>
+        <element uuid="a38b2316-abcf-4b07-b564-0ffa646d1b94" manual="true">
+          <element uuid="356d0f4d-18a5-457e-bdcc-99883510078f" manual="true">
+            <element uuid="8a628ad4-4d80-495c-8aba-aeb93aaeac12" manual="true" dockArea="right">
+              <bo>
+                <seg>feature</seg>
+                <seg>obraz_out</seg>
+              </bo>
+              <position x="60.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>send_display</seg>
+            </bo>
+            <position x="12.0" y="58.0"/>
+            <size width="134.0" height="50.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="86.0" y="60.0"/>
+          <size width="169.0" height="108.0"/>
         </element>
         <element uuid="0de3e8d1-60b4-44a7-a857-33bb0f1c43a3" manual="true">
           <bo>
@@ -547,16 +714,51 @@
           <seg>subcomponent</seg>
           <seg>the_thread_display</seg>
         </bo>
-        <position x="86.0" y="310.0"/>
-        <size width="296.0" height="60.0"/>
+        <position x="562.0" y="442.0"/>
+        <size width="312.0" height="178.0"/>
       </element>
       <element uuid="6d650a20-6d0e-43dd-a694-21e2459b3bf3" manual="true">
+        <element uuid="aa164b40-b9ae-46da-b972-43eebddd1078" manual="true">
+          <element uuid="e177199c-c815-4199-986c-cfccf3483555" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
         <element uuid="5d85ac47-f614-4673-9b91-00182249e472" manual="true" dockArea="left">
           <bo>
             <seg>feature</seg>
             <seg>pressed_keys</seg>
           </bo>
           <position y="40.0"/>
+        </element>
+        <element uuid="6cfb5c86-5554-48b8-8c6f-d411f57976a5" manual="true">
+          <element uuid="c1ab447b-4f5b-4d41-b40f-24e61cf51fac" manual="true">
+            <element uuid="84d85bc1-a6d1-414e-8a6c-ada7b2c93897" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>key_input</seg>
+              </bo>
+              <position y="10.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>read_keyboard</seg>
+            </bo>
+            <position x="12.0" y="62.0"/>
+            <size width="144.0" height="50.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="98.0" y="68.0"/>
+          <size width="156.0" height="112.0"/>
         </element>
         <element uuid="fbed5105-a1a8-4a4c-bf7f-1ad6211eaf83" manual="true">
           <bo>
@@ -568,16 +770,51 @@
           <seg>subcomponent</seg>
           <seg>the_thread_keyboard</seg>
         </bo>
-        <position x="86.0" y="100.0"/>
-        <size width="296.0" height="80.0"/>
+        <position x="98.0" y="24.0"/>
+        <size width="318.0" height="214.0"/>
       </element>
       <element uuid="11a95d5a-17c8-4ae5-b2c3-87873661f1bc" manual="true">
+        <element uuid="30452f70-e331-42b7-b1c7-a06d56b83b34" manual="true">
+          <element uuid="6e0b7914-315f-4b0c-82f2-806c2b2c9173" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
         <element uuid="f0bf9e49-11a7-4140-be4f-680625e195e3" manual="true" dockArea="right">
           <bo>
             <seg>feature</seg>
             <seg>print_out</seg>
           </bo>
-          <position x="221.0" y="10.0"/>
+          <position x="273.0" y="10.0"/>
+        </element>
+        <element uuid="55dfac58-3108-49dc-a3b2-b4fb1b9a43b0" manual="true">
+          <element uuid="a9334656-408c-4e1c-9b76-5845f2454e7f" manual="true">
+            <element uuid="29b4d40f-9ac5-45a8-9aad-db46a5ace792" manual="true" dockArea="right">
+              <bo>
+                <seg>feature</seg>
+                <seg>text_out</seg>
+              </bo>
+              <position x="19.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>print_info</seg>
+            </bo>
+            <position x="38.0" y="34.0"/>
+            <size width="79.0" height="50.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="92.0" y="44.0"/>
+          <size width="189.0" height="89.0"/>
         </element>
         <element uuid="abcbb70a-b702-4428-a832-3ca70ed45436" manual="true">
           <bo>
@@ -589,16 +826,51 @@
           <seg>subcomponent</seg>
           <seg>the_thread_printer</seg>
         </bo>
-        <position x="110.0" y="31.0"/>
-        <size width="289.0" height="60.0"/>
+        <position x="602.0" y="44.0"/>
+        <size width="341.0" height="150.0"/>
       </element>
       <element uuid="950294f7-f4a7-42b2-a383-ec25c0f2da58" manual="true">
+        <element uuid="5db13aa8-ddee-4157-9e0b-80e1a3c142a5" manual="true">
+          <element uuid="45b50141-96cb-4dc6-98fe-8f01470856b0" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>C1</seg>
+          </bo>
+        </element>
         <element uuid="a0bdbf45-9a5a-4aab-aebf-7a174cc7ae44" manual="true" dockArea="right">
           <bo>
             <seg>feature</seg>
             <seg>speaker_out</seg>
           </bo>
-          <position x="234.0" y="10.0"/>
+          <position x="406.0" y="10.0"/>
+        </element>
+        <element uuid="57c4f778-aa72-43b9-8345-8ca5a9f9e911" manual="true">
+          <element uuid="03cc0146-021e-4ec3-a40f-ef893cc21826" manual="true">
+            <element uuid="8a2c62cd-4912-43d8-b507-b765e83c2e46" manual="true" dockArea="right">
+              <bo>
+                <seg>feature</seg>
+                <seg>speaker_speak</seg>
+              </bo>
+              <position x="80.0" y="5.0"/>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>speaker_send_message</seg>
+            </bo>
+            <position x="12.0" y="26.0"/>
+            <size width="187.0" height="72.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>Main</seg>
+          </bo>
+          <position x="62.0" y="49.0"/>
+          <size width="257.0" height="98.0"/>
         </element>
         <element uuid="89112921-ae9d-4e57-856b-7008e7cfe6f8" manual="true">
           <bo>
@@ -610,8 +882,8 @@
           <seg>subcomponent</seg>
           <seg>the_thread_speaker</seg>
         </bo>
-        <position x="60.0" y="620.0"/>
-        <size width="323.0" height="60.0"/>
+        <position x="452.0" y="1142.0"/>
+        <size width="495.0" height="147.0"/>
       </element>
       <element uuid="c226824c-3f16-446e-851c-c70af859c48b" manual="true">
         <bo>
@@ -624,7 +896,7 @@
         <seg>the_controller</seg>
       </bo>
       <position x="538.0" y="58.0"/>
-      <size width="460.0" height="724.0"/>
+      <size width="1231.0" height="1330.0"/>
     </element>
     <element uuid="e154cfc0-af7c-4156-8eb4-238e71b93a19" manual="true">
       <element uuid="47047cda-d345-437b-ac96-6aae327e945a" manual="true" dockArea="right">
@@ -651,7 +923,7 @@
         <seg>subcomponent</seg>
         <seg>the_dispenser</seg>
       </bo>
-      <position x="1157.0" y="388.0"/>
+      <position x="2043.0" y="380.0"/>
       <size width="290.0" height="110.0"/>
     </element>
     <element uuid="9e860709-918f-4ab6-90c7-1ee1de11d84e" manual="true">
@@ -679,7 +951,7 @@
         <seg>subcomponent</seg>
         <seg>the_display</seg>
       </bo>
-      <position x="1158.0" y="177.0"/>
+      <position x="2044.0" y="169.0"/>
       <size width="292.0" height="110.0"/>
     </element>
     <element uuid="84a415b7-5331-4d8c-b305-7a1fdf406346" manual="true">
@@ -735,7 +1007,7 @@
         <seg>subcomponent</seg>
         <seg>the_printer</seg>
       </bo>
-      <position x="1158.0" y="28.0"/>
+      <position x="2044.0" y="20.0"/>
       <size width="288.0" height="110.0"/>
     </element>
     <element uuid="8e20581d-2fa9-4aa3-ae1c-c43e7c60e5d8" manual="true">
@@ -798,15 +1070,15 @@
         <seg>subcomponent</seg>
         <seg>the_speaker</seg>
       </bo>
-      <position x="1154.0" y="588.0"/>
+      <position x="2040.0" y="580.0"/>
       <size width="295.0" height="110.0"/>
     </element>
     <bo>
       <seg>classifier</seg>
       <seg>BankomatSystem.with_devices</seg>
     </bo>
-    <position x="12.0" y="12.0"/>
-    <size width="1629.0" height="1028.0"/>
+    <position x="-210.0" y="-240.0"/>
+    <size width="2769.0" height="1888.0"/>
   </element>
   <config type="structure" connectionPrimaryLabelsVisible="false">
     <enabledAadlProperties/>
