@@ -42,6 +42,16 @@ public
 
 		properties
 			actual_processor_binding => (reference (the_processor)) applies to the_controller;
+			Priority => 10 applies to the_controller.the_thread_speaker;
+			Priority => 09 applies to the_controller.the_thread_printer;
+			Priority => 08 applies to the_controller.the_thread_keyboard;
+			Priority => 07 applies to the_controller.the_thread_dispenser;
+			Priority => 06 applies to the_controller.the_thread_card_return;
+			Priority => 05 applies to the_controller.the_thread_card_reader;
+			Priority => 04 applies to the_controller.the_thread_camera;
+			Priority => 03 applies to the_controller.the_thread_display;
+			
+        	
 			
 	end BankomatSystem.with_devices;
 
@@ -95,6 +105,13 @@ public
 			
 		connections
 			C1: parameter pressed_keys -> read_keyboard.key_input;
+		
+		properties
+			Dispatch_Protocol => Sporadic;
+			Compute_Execution_Time => 1 ms .. 3 ms; 
+			Period => 1000ms;
+			Deadline => 1000ms; 
+			
 	end KeyboardThread.impl;
 	
 		subprogram ReadKeyboard
@@ -121,6 +138,13 @@ public
 			};
 		connections
 			C1: parameter send_display.obraz_out -> screen_out;
+		
+		properties
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 1 ms .. 2 ms;
+			Period => 1000ms;
+			Deadline => 1000ms;
+			
 	end DisplayThread.impl;
 	
 	subprogram SendDisplay		
@@ -148,6 +172,13 @@ public
 			};
 		connections
 			C1: parameter dispenser_withdraw.withdraw_info -> dispenser_out;
+			
+		properties
+			Dispatch_Protocol => Sporadic;
+			Compute_Execution_Time => 5 ms .. 50 ms; 
+			Period => 1000ms;
+			Deadline => 1000ms;
+			
 	end DispenserThread.impl;
 	
 	subprogram DispenserWithdraw
@@ -175,6 +206,13 @@ public
 			};
 		connections
 			C1: parameter card_inserted -> read_card.read_card;
+			
+		properties
+			Dispatch_Protocol => Sporadic;
+			Compute_Execution_Time => 1 ms .. 10 ms; 
+			Period => 1000ms;
+			Deadline => 1000ms;
+			
 	end CardReaderThread.impl;
 	
 	subprogram ReadCard
@@ -202,6 +240,13 @@ public
 			
 		--connections
 			--C2: port return_card.return_card -> card_return;
+			
+		properties
+			Dispatch_Protocol => Sporadic;
+			Compute_Execution_Time => 200 ms .. 200 ms; 
+			Period => 5000ms;
+			Deadline => 5000ms;  
+			
 	end CardReturnThread.impl;
 	
 	subprogram ReturnCard
@@ -228,6 +273,13 @@ public
 			};
 		connections
 			C1: parameter speaker_send_message.speaker_speak -> speaker_out;
+			
+		properties
+			Dispatch_Protocol => Sporadic;
+			Compute_Execution_Time => 100 ms .. 500 ms; 
+			Period => 5000ms;
+			Deadline => 5000ms;  
+			
 	end SpeakerThread.impl;
 	
 	subprogram SpeakerSendMessage
@@ -255,6 +307,13 @@ public
 			};
 		connections
 			C1: parameter print_info.text_out -> print_out;
+			
+		properties
+			Dispatch_Protocol => Sporadic;
+			Compute_Execution_Time => 50 ms .. 300 ms; 
+			Period => 5000ms;
+			Deadline => 5000ms;  
+			
 	end PrinterThread.impl;
 
 	subprogram PrintInfo
@@ -280,6 +339,12 @@ public
 			};
 		connections
 			C1: parameter video_stream_in -> record_camera.recorded_video;
+			
+		properties
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 1 ms .. 2 ms; 
+			Period => 1000ms;
+			Deadline => 1000ms;  
 	end CameraThread.impl;
 
 	subprogram RecordCamera
@@ -364,7 +429,7 @@ public
 	bus HWConnection
 	end HWConnection;
 
-	bus implementation HWConnection.impl
+	bus implementation HWConnection.impl	
 	end HWConnection.impl;
 
 	processor MainProcessor

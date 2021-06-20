@@ -45,8 +45,9 @@
         <seg>bus_dispenser_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1296.0" y="698.0"/>
-        <point x="1296.0" y="228.0"/>
+        <point x="-90.0" y="1485.0"/>
+        <point x="2280.0" y="1485.0"/>
+        <point x="2280.0" y="220.0"/>
       </bendpoints>
     </element>
     <element uuid="234066e4-2d8a-4e4a-af63-f03838cfa5b9" manual="true">
@@ -61,8 +62,9 @@
         <seg>bus_display_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1300.0" y="698.0"/>
-        <point x="1300.0" y="18.0"/>
+        <point x="-90.0" y="1495.0"/>
+        <point x="2270.0" y="1495.0"/>
+        <point x="2270.0" y="10.0"/>
       </bendpoints>
     </element>
     <element uuid="dd3b8cda-e553-48e9-bfc6-21f4ca57728a" manual="true">
@@ -93,8 +95,9 @@
         <seg>bus_printer_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1308.0" y="698.0"/>
-        <point x="1308.0" y="-140.0"/>
+        <point x="-90.0" y="1500.0"/>
+        <point x="2275.0" y="1500.0"/>
+        <point x="2275.0" y="-150.0"/>
       </bendpoints>
     </element>
     <element uuid="b1b8a931-480f-4f83-b051-654648b7a6d1" manual="true">
@@ -124,8 +127,9 @@
         <seg>bus_speaker_cnt</seg>
       </bo>
       <bendpoints>
-        <point x="1292.0" y="698.0"/>
-        <point x="1292.0" y="428.0"/>
+        <point x="-95.0" y="1505.0"/>
+        <point x="2270.0" y="1505.0"/>
+        <point x="2270.0" y="420.0"/>
       </bendpoints>
     </element>
     <element uuid="c1113a46-4e43-4f1d-ad42-38ae4c619452" manual="true">
@@ -331,18 +335,6 @@
           <seg>card_in_thread_cnt</seg>
         </bo>
       </element>
-      <element uuid="992061ad-ccbf-4fa7-be0b-7144075506bf" manual="true">
-        <element uuid="5b336e36-be63-4119-b4bd-3951b7c351f9" manual="true">
-          <bo>
-            <seg>tag</seg>
-            <seg>unidirectional</seg>
-          </bo>
-        </element>
-        <bo>
-          <seg>connection</seg>
-          <seg>card_out_thread_cnt</seg>
-        </bo>
-      </element>
       <element uuid="e603e44a-6208-46a8-be5c-1b55e3a82a89" manual="true">
         <element uuid="c96f4d3c-4502-425a-a42e-92ebe16248e5" manual="true">
           <bo>
@@ -528,31 +520,12 @@
             <seg>C1</seg>
           </bo>
         </element>
-        <element uuid="9fd8371f-63ef-410e-8157-0d6a87d30574" manual="true">
-          <element uuid="a0c47ce2-a004-4e46-a198-d1bdda42bd38" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>C2</seg>
-          </bo>
-        </element>
         <element uuid="fb29fefb-034a-4b23-9292-7cdec1b70f10" manual="true" dockArea="left">
           <bo>
             <seg>feature</seg>
             <seg>card_inserted</seg>
           </bo>
           <position y="89.0"/>
-        </element>
-        <element uuid="bc315b1a-ed96-4643-882c-66ac7e74bc39" manual="true" dockArea="left">
-          <bo>
-            <seg>feature</seg>
-            <seg>card_return</seg>
-          </bo>
-          <position y="44.0"/>
         </element>
         <element uuid="ff8c7f37-3405-4777-a004-56b6ba14e471" manual="true">
           <element uuid="1c8a3b4f-f7ce-4fd4-b259-0437ce72a570" manual="true">
@@ -569,21 +542,6 @@
             </bo>
             <position x="12.0" y="38.0"/>
             <size width="122.0" height="60.0"/>
-          </element>
-          <element uuid="6a1bbb3f-03a3-4a56-9b0a-364ae324ce3e" manual="true">
-            <bo>
-              <seg>subprogram_call</seg>
-              <seg>return_card</seg>
-            </bo>
-            <position x="190.0" y="50.0"/>
-            <size width="101.0" height="35.0"/>
-          </element>
-          <element uuid="9c4e1eb8-626c-4626-835b-912ac06c9e2f" manual="true">
-            <bo>
-              <seg>subprogram_call_order</seg>
-              <seg>read_card</seg>
-              <seg>return_card</seg>
-            </bo>
           </element>
           <bo>
             <seg>subprogram_call_sequence</seg>
@@ -750,15 +708,15 @@
               <seg>subprogram_call</seg>
               <seg>read_keyboard</seg>
             </bo>
-            <position x="12.0" y="62.0"/>
+            <position x="50.0" y="40.0"/>
             <size width="144.0" height="50.0"/>
           </element>
           <bo>
             <seg>subprogram_call_sequence</seg>
             <seg>Main</seg>
           </bo>
-          <position x="98.0" y="68.0"/>
-          <size width="156.0" height="112.0"/>
+          <position x="54.0" y="68.0"/>
+          <size width="230.0" height="112.0"/>
         </element>
         <element uuid="fbed5105-a1a8-4a4c-bf7f-1ad6211eaf83" manual="true">
           <bo>
