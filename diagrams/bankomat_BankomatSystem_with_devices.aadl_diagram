@@ -478,21 +478,21 @@
                 <seg>feature</seg>
                 <seg>recorded_video</seg>
               </bo>
-              <position y="10.0"/>
+              <position/>
             </element>
             <bo>
               <seg>subprogram_call</seg>
               <seg>record_camera</seg>
             </bo>
-            <position x="12.0" y="46.0"/>
-            <size width="169.0" height="52.0"/>
+            <position x="20.0" y="40.0"/>
+            <size width="213.0" height="61.0"/>
           </element>
           <bo>
             <seg>subprogram_call_sequence</seg>
             <seg>Main</seg>
           </bo>
-          <position x="110.0" y="70.0"/>
-          <size width="251.0" height="98.0"/>
+          <position x="119.0" y="70.0"/>
+          <size width="251.0" height="102.0"/>
         </element>
         <element uuid="4bb4cb6d-674d-4fa9-bcda-f372508c979c" manual="true">
           <bo>
@@ -534,14 +534,14 @@
                 <seg>feature</seg>
                 <seg>read_card</seg>
               </bo>
-              <position y="10.0"/>
+              <position/>
             </element>
             <bo>
               <seg>subprogram_call</seg>
               <seg>read_card</seg>
             </bo>
-            <position x="12.0" y="38.0"/>
-            <size width="122.0" height="60.0"/>
+            <position x="89.0" y="30.0"/>
+            <size width="178.0" height="60.0"/>
           </element>
           <bo>
             <seg>subprogram_call_sequence</seg>
@@ -585,19 +585,19 @@
         </element>
         <element uuid="8a8c3480-910d-4f6e-ba3e-512f797e24f3" manual="true">
           <element uuid="145246f2-4dab-46af-986b-d29a0473f3de" manual="true">
-            <element uuid="d51a6cac-e166-49a2-81d8-4eb8731ce7e1" manual="true" dockArea="right">
+            <element uuid="d51a6cac-e166-49a2-81d8-4eb8731ce7e1" manual="true" dockArea="top">
               <bo>
                 <seg>feature</seg>
                 <seg>withdraw_info</seg>
               </bo>
-              <position x="44.0"/>
+              <position x="110.0"/>
             </element>
             <bo>
               <seg>subprogram_call</seg>
               <seg>dispenser_withdraw</seg>
             </bo>
-            <position x="116.0" y="40.0"/>
-            <size width="147.0" height="60.0"/>
+            <position x="19.0" y="40.0"/>
+            <size width="244.0" height="60.0"/>
           </element>
           <bo>
             <seg>subprogram_call_sequence</seg>
@@ -616,7 +616,7 @@
           <seg>subcomponent</seg>
           <seg>the_thread_dispenser</seg>
         </bo>
-        <position x="192.0" y="652.0"/>
+        <position x="393.0" y="682.0"/>
         <size width="481.0" height="162.0"/>
       </element>
       <element uuid="4620faaa-4159-4268-bc11-3f132bc17219" manual="true">
@@ -702,14 +702,14 @@
                 <seg>feature</seg>
                 <seg>key_input</seg>
               </bo>
-              <position y="10.0"/>
+              <position/>
             </element>
             <bo>
               <seg>subprogram_call</seg>
               <seg>read_keyboard</seg>
             </bo>
-            <position x="50.0" y="40.0"/>
-            <size width="144.0" height="50.0"/>
+            <position x="10.0" y="30.0"/>
+            <size width="210.0" height="60.0"/>
           </element>
           <bo>
             <seg>subprogram_call_sequence</seg>
